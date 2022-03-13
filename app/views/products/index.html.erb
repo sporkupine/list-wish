@@ -14,7 +14,7 @@
     <% @products.each do |product| %>
     <tr>
       <td><%= product.name %></td>
-      <td>$<%= sprintf("%.2f", product.price / 100) %></td>
+      <td><%= sprintf("$%.2f", product.price / 100) %></td>
       <td><%= product.seller %></td>
       <td>Placeholder</td>
     </tr>
