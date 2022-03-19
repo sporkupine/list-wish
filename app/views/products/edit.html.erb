@@ -1,36 +1,5 @@
 <h1>Edit a Product</h1>
 
-<% if @product.errors.any? %>
-  <h3>Submission failed. Here's what went wrong:</h3>
-  <ul>
-    <% @product.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-
-  <% end %>
-
-<%= form_with( model: @product, local: true ) do |form| %>
-
-<p>
-  <%= form.label :name %>
-  <br>
-  <%= form.text_field :name %>
-</p>
-<p>
-  <%= form.label :price %>
-  <br>
-  <%= form.number_field :price, step: :any %>
-</p>
-<p>
-  <%= form.label :seller %>
-  <br>
-  <%= form.text_field :seller %>
-</p>
-<p>
-  <%= form.submit "Submit" %>
-</p>
-
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Return to Products', products_path %>
