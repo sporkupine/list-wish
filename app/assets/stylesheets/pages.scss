@@ -4,19 +4,20 @@
 
 @import "bootstrap/dist/css/bootstrap";
 
+$homeBackgroundURL: "https://images.pexels.com/photos/5942628/pexels-photo-5942628.jpeg";
+
 .home-background {
   padding: 5% 2%;
   background-size: 100% 100%;
-  background-image: url("https://images.pexels.com/photos/7679454/pexels-photo-7679454.jpeg");
-  height: 90vh;
-  width: 100%;
+  background-image: url($homeBackgroundURL);
+  background-size: cover;
 }
 .home-header {
-  color: white;
+  color: rgb(255, 140, 125);
   font-size: 10vw;
 }
 .home-paragraph {
-  color: white;
+  color: rgb(37, 37, 37);
   font-size: 1.1vw;
 }
 .home-button {
@@ -38,12 +39,12 @@
   .home-background {
     padding: 5% 5%;
     background-size: 100% 100%;
-    background-image: url("https://images.pexels.com/photos/7679454/pexels-photo-7679454.jpeg");
+    background-image: url($homeBackgroundURL);
     height: 91vh;
     width: 100%;
   }
   .home-header {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 10vw;
   }
   .home-paragraph {
@@ -71,7 +72,7 @@
 @media (max-height: 750px) and (max-width: 1024px) {
   .home-background {
     background-size: 100% 100%;
-    background-image: url("https://images.pexels.com/photos/7679454/pexels-photo-7679454.jpeg");
+    background-image: url($homeBackgroundURL);
     height: 90vh;
     width: 100%;
   }
@@ -106,7 +107,7 @@
   .home-background {
     padding: 5% 5%;
     background-size: 100% 100%;
-    background-image: url("https://images.pexels.com/photos/7679454/pexels-photo-7679454.jpeg");
+    background-image: url($homeBackgroundURL);
     height: 90vh;
     width: 100%;
   }
@@ -140,7 +141,7 @@
   .home-background {
     padding: 10% 5%;
     background-size: 100% 100%;
-    background-image: url("https://images.pexels.com/photos/7679454/pexels-photo-7679454.jpeg");
+    background-image: url($homeBackgroundURL);
     height: 95vh;
     width: 100%;
   }

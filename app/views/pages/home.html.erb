@@ -9,9 +9,7 @@
   </p>
 
   <button class="btn btn-success btn-lg home-button">Sign Up</button>
-  <button class="btn home-button explore">
-    <a href="/products" style="color: rgb(85, 85, 85); text-decoration:none;"
-      >Explore Products</a
-    >
-  </button>
+  
+    <%= link_to "Explore Products", products_path, class: "btn home-button explore" %>
+  
 </div>
