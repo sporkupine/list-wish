@@ -5,6 +5,8 @@
 @import "bootstrap/dist/css/bootstrap";
 
 $homeBackgroundURL: "https://images.pexels.com/photos/5942628/pexels-photo-5942628.jpeg";
+$salmonPink: rgb(255, 140, 125);
+$charcoalGray: rgb(37, 37, 37);
 
 .home-background {
   padding: 5% 2%;
@@ -13,11 +15,11 @@ $homeBackgroundURL: "https://images.pexels.com/photos/5942628/pexels-photo-59426
   background-size: cover;
 }
 .home-header {
-  color: rgb(255, 140, 125);
+  color: $salmonPink;
   font-size: 10vw;
 }
 .home-paragraph {
-  color: rgb(37, 37, 37);
+  color: $charcoalGray;
   font-size: 1.1vw;
 }
 .home-button {
@@ -44,11 +46,11 @@ $homeBackgroundURL: "https://images.pexels.com/photos/5942628/pexels-photo-59426
     width: 100%;
   }
   .home-header {
-    color: rgb(255, 255, 255);
+    color: $salmonPink;
     font-size: 10vw;
   }
   .home-paragraph {
-    color: white;
+    color: $charcoalGray;
     font-size: 3vw;
     text-align: left;
     margin: 0 0 10% 0;
@@ -77,13 +79,13 @@ $homeBackgroundURL: "https://images.pexels.com/photos/5942628/pexels-photo-59426
     width: 100%;
   }
   .home-header {
-    color: white;
+    color: $salmonPink;
     font-size: 7vw;
     text-align: left;
     margin: 0 0 2% 0;
   }
   .home-paragraph {
-    color: white;
+    color: $charcoalGray;
     font-size: 2vw;
     text-align: left;
     margin: 0 0 5% 0;
@@ -112,11 +114,11 @@ $homeBackgroundURL: "https://images.pexels.com/photos/5942628/pexels-photo-59426
     width: 100%;
   }
   .home-header {
-    color: white;
+    color: $salmonPink;
     font-size: 10vw;
   }
   .home-paragraph {
-    color: white;
+    color: $charcoalGray;
     font-size: 3vw;
     text-align: left;
     margin: 0 0 10% 0;
@@ -146,13 +148,13 @@ $homeBackgroundURL: "https://images.pexels.com/photos/5942628/pexels-photo-59426
     width: 100%;
   }
   .home-header {
-    color: white;
+    color: $salmonPink;
     font-size: 10vw;
     text-align: center;
     margin: 0 0 10% 0;
   }
   .home-paragraph {
-    color: white;
+    color: $charcoalGray;
     font-size: 5vw;
     text-align: center;
     margin: 0 0 20% 0;
