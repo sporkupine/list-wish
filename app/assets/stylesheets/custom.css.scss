@@ -1,1 +1,7 @@
 @import "bootstrap/dist/css/bootstrap";
+
+.card-img-top {
+  width: 95%;
+  height: 15vw;
+  object-fit: cover;
+}
