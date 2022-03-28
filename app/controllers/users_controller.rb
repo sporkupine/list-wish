@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -23,6 +32,7 @@ class UsersController < ApplicationController
 
     if @user.update(user_params)
       flash[:notice] = "Account updated successfully."
+      redirect_to products_path
     else
       render :edit
     end
