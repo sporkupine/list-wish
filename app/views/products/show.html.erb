@@ -1,3 +1,5 @@
+<div class="container">
+
 <h2><%= @product.name %></h2>
 
 <p><strong><%= @product.seller %></strong></p>
@@ -7,3 +9,4 @@
 <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 <br>
 <%= link_to 'Return to Products', products_path %>
+</div>
