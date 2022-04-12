@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save 
-      flash[:notice] = "Account created successfully!"
+      flash[:notice] = "Account created successfully. Welcome to WishList, #{@user.username}!"
       redirect_to @user
     else
         render :new
