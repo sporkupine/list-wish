@@ -1,13 +1,4 @@
-<% if @product.errors.any? %>
-  <h3>Submission failed. Here's what went wrong:</h3>
-  <ul>
-    <% @product.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-
-  <% end %>
-
+<%= render 'shared/errors', obj: @product %>
 <%= form_with( model: @product, local: true ) do |form| %>
 
 <p>

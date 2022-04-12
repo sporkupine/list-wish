@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     if @user.save 
       flash[:notice] = "Account created successfully!"
-      redirect_to products_path
+      redirect_to @user
     else
         render :new
     end
