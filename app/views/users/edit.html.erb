@@ -4,8 +4,10 @@
   </h1>
 
   <%= render 'form' %>
+  <p class="text-center">
+    <%= link_to 'Cancel and return to profile', user_path(@user) %>
+  </p>
 
-  <%= link_to 'Cancel and return to profile', user_path(@user), class: "" %>
 
 
 </div>

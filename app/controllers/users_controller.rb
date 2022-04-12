@@ -30,8 +30,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    
-
     if @user.update(user_params)
       flash[:notice] = "Account updated successfully."
       redirect_to products_path
