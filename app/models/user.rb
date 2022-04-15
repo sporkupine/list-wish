@@ -2,7 +2,9 @@ class User < ApplicationRecord
 
   before_save { self.email = email.downcase }
 
-  # has_many :products
+  has_many :user_products
+  has_many :products, through: :user_products
+  
   has_secure_password
 
   validates :username, uniqueness: { case_sensitive: false }, 
