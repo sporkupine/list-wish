@@ -39,6 +39,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.destroy
+      session[:user_id] = nil
+      flash[:notice] = 'User was successfully deleted.'
+      redirect_to users_path
+    else
+      flash[:error] = 'Something went wrong!'
+      redirect_to user_path(@user)
+    end
+  end
+  
+
   private
 
   def set_user

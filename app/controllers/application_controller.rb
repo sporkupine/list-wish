@@ -6,18 +6,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # def require_same_user
+  def require_same_user
+    if helpers.current_user != @user
+      flash[:notice] = "You can only edit your own profile."
+    end
+  end
 
-  # end
-
-  # def add_product
-  #   if !helper.logged_in?
-  #     flash[:notice] = "You have to log in to do that!"
-  #     redirect_to login_path
-  #   else
-  #     user.products.
-  #                   ^ whatever function we use to add products to fav lists
-  #                     will go here
-  #   end
-  # end
 end
