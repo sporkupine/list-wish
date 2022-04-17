@@ -1,6 +1,9 @@
 <h1 class="mx-4 my-2">All Users</h1>
 
 <div class="container">
+  <div class="flickr_pagination">
+    <%= will_paginate @users, container: false %>
+  </div>
   <div class="row">
     <% @users.each do |user| %>
     <div class="col-md-3">
@@ -29,5 +32,8 @@
       </div>
     </div>
     <% end %>
+  </div>
+  <div class="flickr_pagination">
+    <%= will_paginate @users, container: false %>
   </div>
 </div>
