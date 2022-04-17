@@ -1,21 +1,30 @@
-<h1 class="text-center">User Index</h1>
+<h1 class="mx-4 my-2">All Users</h1>
 
 <div class="container">
   <div class="row">
     <% @users.each do |user| %>
     <div class="col-md-3">
-      <div class="card">
-        <div class="card-header">
-          <h5>
-            <%= user.username %>
-            <p class="text-muted fs-6">
-              Joined
-                <%= time_ago_in_words(user.created_at) %> ago
-            </p>
-          </h5>
-        </div>
+      <div class="card mx-2 my-4 shadow rounded">
+        <h4 class="card-header">
+          <%= user.username %>
+          <p class="text-muted fs-6">
+            Joined
+              <%= time_ago_in_words(user.created_at) %> ago
+          </p>
+        </h4>
         <div class="card-body">
-
+          <p class="card-text">
+            <%= user.products.count %> Products
+          </p>
+        </div>
+        <div class="card-footer">
+                    <div class="button-container">
+            <%=link_to "View Profile", user_path(user), class: "btn btn-outline-success" %>
+            <% if logged_in? %>
+              <%= link_to "Edit", edit_user_path(user), class: "btn btn-outline-info" %>
+              <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
