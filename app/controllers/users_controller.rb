@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:edit, :update, :show, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 8)
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'User was successfully deleted.'
       redirect_to users_path
     else
-      flash[:error] = 'Something went wrong!'
+      flash[:alert] = 'Something went wrong!'
       redirect_to user_path(@user)
     end
   end

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Login Successful"
       redirect_to user
     else
-      flash[:notice] = "Login Attempt Failed"
+      flash[:alert] = "Login Attempt Failed"
       render :new
     end
   end
