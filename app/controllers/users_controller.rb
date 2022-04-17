@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @products = @user.products.paginate(page: params[:page], per_page: 4)
   end
 
   def new

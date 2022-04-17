@@ -17,7 +17,7 @@
         </h4>
         <div class="card-body">
           <p class="card-text">
-            <%= user.products.count %> Products
+            <%= pluralize(user.products.count, 'Product') %>
           </p>
         </div>
         <div class="card-footer">
