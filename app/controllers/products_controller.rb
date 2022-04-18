@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:edit, :update, :show, :destroy]
+  before_action :set_product, only: [:edit, :update, :show, :destroy, :add_product, :remove_product ]
   before_action :require_user, except: [:show, :index]
 
   def show
@@ -45,14 +45,14 @@ class ProductsController < ApplicationController
   end
 
   
-  def add_product(product)
-    current_user.products << @product
+  def add_product
+    helpers.current_user.products << @product
     flash[:notice] = 'Product added to your list!'
-    redirect_to current_user
+    # redirect_to helpers.current_user
   end
   
-  def remove_product(product)
-    current_user.products.delete(@product.id)
+  def remove_product
+    helpers.current_user.products.delete(@product.id)
     flash[:alert] = 'Successfully deleted from your list.'
     redirect_to products_path
   end
