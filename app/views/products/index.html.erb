@@ -24,14 +24,18 @@
               <%= link_to "Edit", edit_product_path(product), class: "btn btn-outline-info" %>
               <%= link_to "Delete", product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
 
-              <%# stars will be programatically displayed based on
-                whether current_user has favorited the product.
-                on click it will favorite/unfavorite the product. %>
-              <%= link_to user_path(current_user) do %>
-                <i class="bi bi-star h3 float-end text-dark"></i>
-              <% end %>              
-              <i class="bi bi-star-fill h3 float-end text-warning"></i>
-              <%# Add a hover effect to the star icon/button if time allows %>
+
+                <%# stars will be programatically displayed based on
+                  whether current_user has favorited the product.
+                  on click it will favorite/unfavorite the product. %>
+                <% if current_user.products.include?(product) %>
+                  <%= link_to user_path(current_user) do %>
+                    <i class="bi bi-star h3 float-end text-dark"></i>
+                  <% end %>
+                <% else %>        
+                  <i class="bi bi-star-fill h3 float-end text-warning"></i>
+                <% end %>
+                <%# Add a hover effect to the star icon/button if time allows %>
             <% end %>
           </div>
 
