@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
   def add_product
     helpers.current_user.products << @product
     flash[:notice] = 'Product added to your list!'
-    # redirect_to helpers.current_user
+    redirect_to helpers.current_user
   end
   
   def remove_product

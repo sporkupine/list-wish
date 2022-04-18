@@ -34,11 +34,11 @@
               <%= link_to "Edit", edit_product_path(product), class: "btn btn-outline-info" %>
               <%= link_to "Delete", product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
                 <% if current_user.products.include?(product) %>
-                  <%= link_to remove_product_path(product.id), remote: true do %>
+                  <%= link_to "/remove_product/" + product.id.to_s, method: :delete do %>
                     <i class="bi bi-star-fill h3 float-end fav-full"></i>
                   <% end %>
                 <% else %>    
-                  <%= link_to add_product_path(product) do %>    
+                  <%= link_to "/add_product/" + product.id.to_s, method: :patch do %>   
                     <i class="bi bi-star h3 float-end fav-empty"></i>
                   <% end %>
                 <% end %>
