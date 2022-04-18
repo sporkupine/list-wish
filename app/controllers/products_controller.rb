@@ -44,6 +44,19 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  
+  def add_product(product)
+    current_user.products << @product
+    flash[:notice] = 'Product added to your list!'
+    redirect_to current_user
+  end
+  
+  def remove_product(product)
+    current_user.products.delete(@product.id)
+    flash[:alert] = 'Successfully deleted from your list.'
+    redirect_to products_path
+  end
+
   private
 
   def set_product

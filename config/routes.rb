@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
-  patch "add_product", to: "users#add_product"
-  put "add_product", to: "users#add_product"
-  patch "remove_product", to: "users#remove_product"
-  put "remove_product", to: "users#remove_product"
+  patch "add_product", to: "products#add_product"
+  put "add_product", to: "products#add_product"
+  patch "remove_product", to: "products#remove_product"
+  put "remove_product", to: "products#remove_product"
 
 
   resources :products
