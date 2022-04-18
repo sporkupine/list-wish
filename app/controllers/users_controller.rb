@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:edit, :update, :show, :destroy]
+  before_action :set_user, only: [:edit, :update, :show, :destroy, :add_product, :remove_product ]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
@@ -50,7 +50,18 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     end
   end
+
+  def add_product(product)
+    @user.products << product
+    flash[:notice] = 'Product added to your list!'
+    redirect_to @user
+  end
   
+  def remove_product(product)
+    @user.products.delete(product.id)
+    flash[:alert] = 'Successfully deleted from your list.'
+    redirect_to products_path
+  end
 
   private
 
