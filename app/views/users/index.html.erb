@@ -23,7 +23,7 @@
         <div class="card-footer">
                     <div class="button-container">
             <%=link_to "View Profile", user_path(user), class: "btn btn-outline-success" %>
-            <% if logged_in? %>
+            <% if logged_in? && (user == current_user || current_user.admin? ) %>
               <%= link_to "Edit", edit_user_path(user), class: "btn btn-outline-info" %>
               <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
             <% end %>
