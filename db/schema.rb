@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_17_044912) do
+ActiveRecord::Schema.define(version: 2022_04_18_190206) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_04_17_044912) do
     t.float "price"
     t.string "seller"
     t.string "img_path", default: "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
+    t.string "description", default: ""
   end
 
   create_table "user_products", force: :cascade do |t|
