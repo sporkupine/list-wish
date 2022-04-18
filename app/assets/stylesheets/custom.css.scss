@@ -39,3 +39,20 @@
     margin-right: 1em; }
   .flickr_pagination .next_page {
     margin-left: 1em; }
+
+
+.fav-empty {
+  color: #212529;
+}
+
+.fav-empty:hover {
+  color: #ffc107;
+}
+
+.fav-full {
+  color: #ffc107;
+}
+
+.fav-full:hover {
+  color: #f8e29f;
+}
