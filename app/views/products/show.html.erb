@@ -7,7 +7,16 @@
 <p><strong><%= sprintf("$%.2f", @product.price ) %></strong></p>
 <% if logged_in? %>
   <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> | 
-  <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> |
+  <% if current_user.products.include?(@product) %>
+    <%= link_to remove_product_path(@product) do %>
+      <i class="bi bi-star-fill h3 fav-full"></i>
+    <% end %>
+  <% else %>    
+    <%= link_to add_product_path(@product) do %>    
+      <i class="bi bi-star h3 fav-empty"></i>
+    <% end %>
+  <% end %>
 <% else %>
   <%= link_to 'Log in to add to your list!', login_path, class: "btn btn-success" %>
 <% end %>
