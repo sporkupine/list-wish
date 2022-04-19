@@ -1,5 +1,11 @@
 class ProductsController < ApplicationController
 
+  require 'faraday'
+  require 'faraday/net_http'
+  Faraday.default_adapter = :net_http
+
+
+
   before_action :set_product, only: [:edit, :update, :show, :destroy, :add_product, :remove_product ]
   before_action :require_user, except: [:show, :index]
 
@@ -9,6 +15,14 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.paginate(page: params[:page], per_page: 8)
+    @connection = Faraday.new(
+      url:'https://fakestoreapi.com/'
+    )
+    @response = @connection.get('/products') do |req|
+      req.params['limit'] = 20
+    end
+    @fake_products = JSON.parse(@response.body)
+    byebug
   end
 
   def new
