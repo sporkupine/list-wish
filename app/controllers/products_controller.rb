@@ -14,7 +14,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.paginate(page: params[:page], per_page: 8)
     @connection = Faraday.new(
       url:'https://fakestoreapi.com/'
     )
@@ -22,6 +21,17 @@ class ProductsController < ApplicationController
       
   
     @fake_products = JSON.parse(@response.body)
+    @fake_products.each do |product|
+      @new_prod = Product.new(
+        name: product["title"],
+        price: product["price"],
+        description: product["description"],
+        img_path: product["image"],
+        seller: ["Amazon", "Wal-Mart", "Umbrella Corp.", "Skynet"].sample
+      )
+      @new_prod.save unless (Product.all.select {|product| product.name == @new_prod.name} != [] )
+    end
+    @products = Product.paginate(page: params[:page], per_page: 8)
   end
 
   def new
