@@ -18,11 +18,10 @@ class ProductsController < ApplicationController
     @connection = Faraday.new(
       url:'https://fakestoreapi.com/'
     )
-    @response = @connection.get('/products') do |req|
-      req.params['limit'] = 20
-    end
+    @response = @connection.get('/products')
+      
+  
     @fake_products = JSON.parse(@response.body)
-    byebug
   end
 
   def new
