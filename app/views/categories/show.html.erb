@@ -18,11 +18,12 @@
           <h5 class="card-header mb-2 mt-1">
             <strong><%= product.name %></strong>
           </h5>
+          <%= image_tag(product.img_path, class: "rounded mx-auto show-image") %>
           <h6 class="card-subtitle ms-4 mb-2 text-muted">
             <%= product.seller %>
           </h6>
           <h6 class="card-title ms-4 mb-2">
-            <%= product.price %>
+            <%= sprintf("$%.2f", product.price ) %>
           </h6>
           <div class="ms-3">
             <% if product.categories.any? %>
