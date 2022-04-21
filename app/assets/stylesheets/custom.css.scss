@@ -1,5 +1,10 @@
 @import "bootstrap/dist/css/bootstrap";
 
+@font-face {
+  font-family: 'Quicksand';
+  src: url('Quicksand-Bold.ttf');
+}
+
 .card-img-top {
   width: 95%;
   height: 15vw;
@@ -8,6 +13,10 @@
 
 .btn-close {
   float: right;
+}
+
+.logo-text a {
+  font-family: 'Quicksand Bold', sans-serif;
 }
 
 .flickr_pagination {
