@@ -18,6 +18,9 @@
           <h6>
             <strong><%= sprintf("$%.2f", product.price ) %></strong>
           </h6>
+          <% if product.categories.any? %>
+            <%= render product.categories %>
+          <% end %>
           <div class="button-container">
             <%=link_to "View", product_path(product), class: "btn btn-outline-success" %>
             <% if logged_in? %>

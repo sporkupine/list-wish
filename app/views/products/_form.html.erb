@@ -30,6 +30,12 @@
             <br>
             <%= form.text_field :img_path,  class: "form-control shadow rounded" %>
           </p>
+          <p>
+            <%= form.label :category, class: "col-2 col-form-label" %>
+            <br>
+            <%= form.collection_select(:category_ids, Category.order(:name), :id, :name, 
+              {prompt: "Select"}, {multiple: true, size: 3, class: "form-control"}) %>
+          </p>
         <div class="form-group-row text-center mt-4">
           <%= form.submit class: "btn btn-lg btn-outline-light" %>
         </div>

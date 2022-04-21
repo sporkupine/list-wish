@@ -5,6 +5,9 @@
 <p><strong><%= @product.seller %></strong></p>
 <%= image_tag(@product.img_path, class: "rounded mx-auto show-image") %>
 <p><strong><%= sprintf("$%.2f", @product.price ) %></strong></p>
+<% if @product.categories.any? %>
+  <div><%= render @product.categories %></div>
+<% end %>
 <p class="text-center"><%= @product.description %></p>
 <% if logged_in? %>
   <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> | 

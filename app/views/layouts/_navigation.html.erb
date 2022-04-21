@@ -69,6 +69,24 @@
             <li><%= link_to 'About', about_path, class: "dropdown-item" %></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a
+            class= "<%= class_names("nav-link dropdown-toggle", { active:  current_page?(categories_path || new_category_path) }) %>"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to 'All Categories', categories_path, class: "dropdown-item" %></li>
+            <% if (logged_in? && current_user.admin? ) %>
+              <li><%= link_to 'Create New Category', new_category_path, class: "dropdown-item" %></li>
+            <% end %>
+          </ul>
+        </li>
         <% if logged_in? %>
           <li class="nav-item">
             <%= link_to "Log Out", logout_path, class: class_names("nav-link", { active: current_page?(logout_path) }),
