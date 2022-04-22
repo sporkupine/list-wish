@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
-import "bootstrap-sprockets"
 import "bootstrap-icons/font/bootstrap-icons.css"
 
 Rails.start()
