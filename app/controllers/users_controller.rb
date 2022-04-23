@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      session[:user_id] = nil
+      session[:user_id] = nil unless helpers.current_user.admin?
       flash[:notice] = 'User was successfully deleted.'
       redirect_to users_path
     else
